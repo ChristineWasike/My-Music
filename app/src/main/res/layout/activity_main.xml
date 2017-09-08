@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.wasike.mymusic.MainActivity">
+
+     <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:id="@+id/imageView"-->
+        <!--android:src="@drawable/sax"-->
+        <!--android:scaleType="centerCrop" />-->
+
+    <TextView
+        android:id="@+id/headerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/baseGridView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="monospace"
+        android:text="Get Lyrics to your music!"
+        android:textSize="30sp"
+        android:typeface="monospace"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <GridView
+        android:id="@+id/baseGridView"
+        android:layout_width="252dp"
+        android:layout_height="222dp"
+        android:columnWidth="50sp"
+        android:gravity="left"
+        android:numColumns="auto_fit"
+        android:padding="0dp"
+        android:scrollingCache="false"
+        android:stretchMode="spacingWidthUniform"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="59dp"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/hint"
+        android:text="Name" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="monospace"
+        android:text="Button"
+        android:typeface="monospace"
+        android:onClick="toasteMe"/>
+
+
+
+
+</RelativeLayout>

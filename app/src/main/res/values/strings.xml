@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">My Music</string>
+    <string name="hint">Song title</string>
+</resources>
