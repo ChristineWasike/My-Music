@@ -17,41 +17,45 @@
         android:id="@+id/headerTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/baseGridView"
+
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
-        android:fontFamily="monospace"
+        android:fontFamily="sans-serif"
         android:text="Get Lyrics to your music!"
         android:textSize="30sp"
-        android:typeface="monospace"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
-    <GridView android:layout_width="match_parent"
+    <GridView
+        android:id="@+id/baseGridView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnWidth="50sp"
-        android:numColumns="auto_fit"
-        android:stretchMode="spacingWidthUniform"
-        android:id="@+id/baseGridView"
-        android:padding="0dp"
         android:gravity="left"
+        android:numColumns="auto_fit"
+        android:padding="0dp"
         android:scrollingCache="false"
-        android:layout_alignParentTop="true"
+        android:stretchMode="spacingWidthUniform"
+        android:layout_below="@+id/headerTextView"
+        android:layout_above="@+id/TitleEditText"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="40sp"/>
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:id="@+id/TitleEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonA"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="23dp"
+        android:background="@color/colorTextIcons"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/hint"
-        android:text="Name" />
+        android:text="Name"
+        android:layout_above="@+id/findLyricsButton"
+        android:layout_alignRight="@+id/baseGridView"
+        android:layout_alignEnd="@+id/baseGridView"
+        android:layout_marginRight="45dp"
+        android:layout_marginEnd="45dp" />
 
     <Button
         android:id="@+id/findLyricsButton"
@@ -60,10 +64,9 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="48dp"
-        android:fontFamily="monospace"
         android:text="Button"
-        android:typeface="monospace"
-        android:onClick="toasteMe"/>
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorTextIcons" />
 
 
 
