@@ -44,7 +44,7 @@ public class GenreAdapter extends BaseAdapter {
             TextView letterView = (TextView) gridView
                     .findViewById(R.id.grid_item_letter);
             // set values into views
-            letterView.setText("Genre");  // using dummy data for now
+            letterView.setText(mGenres[position]);  // using dummy data for now
         } else {
             gridView = (View) convertView;
         }

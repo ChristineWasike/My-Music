@@ -9,15 +9,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/grid_item_label"
         android:layout_weight="0.8"
-        android:gravity="center_horizontal"
+        android:gravity="left"
         android:text="Genre" />
     <TextView
-        android:layout_width="70dp"
+        android:layout_width="90dp"
         android:textSize="20sp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:id="@+id/grid_item_letter"
         android:layout_weight="0.01"
-        android:gravity="center_horizontal"
+        android:gravity="left"
         android:text="Pop" />
 
 </LinearLayout>
