@@ -11,6 +11,10 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'MUSIC_API_KEY', MusicApiKey
+    }
     buildTypes {
         release {
             minifyEnabled false
