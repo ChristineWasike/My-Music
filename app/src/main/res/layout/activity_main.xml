@@ -48,7 +48,6 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/hint"
-        android:text="Name"
         android:layout_below="@+id/baseGridView"
         android:layout_centerHorizontal="true" />
 
@@ -60,8 +59,7 @@
         android:background="@color/colorAccent"
         android:textColor="@color/colorTextIcons"
         android:layout_below="@+id/TitleEditText"
-        android:layout_alignLeft="@+id/TitleEditText"
-        android:layout_alignStart="@+id/TitleEditText" />
+        android:layout_centerHorizontal="true" />
 
 
 
