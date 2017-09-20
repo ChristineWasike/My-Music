@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wasike.mymusic">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/music"
@@ -9,22 +11,21 @@
         android:roundIcon="@drawable/music"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:theme="@style/NoActionBarTheme">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.MTActivity" />
 
-        <activity
-            android:name=".LyricsActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.wasike.mymusic.MainActivity">
-            </meta-data>
-        </activity>
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.wasike.mymusic.ui.MainActivity" />
+
+        <activity android:name=".ui.SongDetailActivity" />
+        <activity android:name=".ui.SavedSongListActivity"></activity>
     </application>
 
 </manifest>
