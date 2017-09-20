@@ -3,7 +3,7 @@ package com.example.wasike.mymusic.ui;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.example.wasike.musicapp.R;
+import com.example.wasike.mymusic.R;
 
 public class SavedSongListActivity extends AppCompatActivity {
 
