@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.wasike.musicapp.R;
+import com.example.wasike.mymusic.R;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
