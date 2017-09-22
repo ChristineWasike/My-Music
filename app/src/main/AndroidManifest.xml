@@ -12,18 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ui.MTActivity" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.wasike.mymusic.ui.MainActivity" />
-        <meta-data android:name="android.webkit.WebView.MetricsOptOut"
+        <meta-data
+            android:name="android.webkit.WebView.MetricsOptOut"
             android:value="true" />
 
         <activity android:name=".ui.SongDetailActivity" />
@@ -32,7 +29,18 @@
             android:name=".ui.LyricsWebViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_lyrics_web_view"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".ui.CreateAccountActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_create_account"
+            android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
