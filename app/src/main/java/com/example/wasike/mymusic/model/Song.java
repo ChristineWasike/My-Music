@@ -15,11 +15,12 @@ public class Song {
     private String mFulltitle;
     private String mHeaderImageUrl;
     private String mArtistName;
+    private String mArtistImage;
 
 
     public Song(){}
     public Song(String type, String title, String titleWithFeatured,
-                String url, String fulltitle, String headerImageUrl, String artistName ){
+                String url, String fulltitle, String headerImageUrl, String artistName, String artistImage ){
         mType= type;
         mTitle = title;
         mTitleWithFeatured = titleWithFeatured;
@@ -27,6 +28,7 @@ public class Song {
         mFulltitle = fulltitle;
         mHeaderImageUrl = headerImageUrl;
         mArtistName = artistName;
+        mArtistImage = artistImage;
     }
 
     public String getType() {
@@ -56,5 +58,9 @@ public class Song {
 
     public String getArtistName() {
         return mArtistName;
+    }
+
+    public String getArtistImage() {
+        return mArtistImage;
     }
 }
