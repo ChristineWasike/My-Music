@@ -9,4 +9,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
     <string name="title_activity_create_account">CreateAccountActivity</string>
+
+    <string name="title_activity_login">LoginActivity</string>
 </resources>
