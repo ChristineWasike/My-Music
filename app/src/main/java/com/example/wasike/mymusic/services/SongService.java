@@ -69,8 +69,9 @@ public class SongService {
                     String fulltitle = hitJson.getJSONObject("result").getString("full_title");
                     String headerImageUrl = hitJson.getJSONObject("result").getString("header_image_url");
                     String artistName = hitJson.getJSONObject("result").getJSONObject("primary_artist").getString("name");
+                    String artistImage = hitJson.getJSONObject("result").getJSONObject("primary_artist").getString("header_image_url");
 
-                    Song song = new Song(type,title, titleWithFeatured,url, fulltitle,headerImageUrl,artistName );
+                    Song song = new Song(type,title, titleWithFeatured,url, fulltitle,headerImageUrl,artistName, artistImage);
                     songs.add(song);
 
 
