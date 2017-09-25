@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:id="@+id/songImageView"
+            android:src="@drawable/lauv"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/dragIcon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/songImageView"
+            android:layout_alignBottom="@id/songImageView"
+            android:gravity="bottom|left"
+            android:src="@drawable/ic_reorder_white_24dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/songNameTextView"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="@string/song_title"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Song FT this artist"
+            android:id="@+id/categoryTextView"
+            android:layout_below="@+id/songNameTextView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textStyle="italic"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Artist"
+                android:id="@+id/artistTextView"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/colorAccent"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
