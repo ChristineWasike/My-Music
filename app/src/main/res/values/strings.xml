@@ -7,8 +7,10 @@
     <string name="title_activity_lyrics_web_view">Lyrics</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="name">Name</string>
 
     <string name="title_activity_create_account">CreateAccountActivity</string>
 
     <string name="title_activity_login">LoginActivity</string>
+    <string name="song_title">Song Title</string>
 </resources>

@@ -39,15 +39,14 @@
             android:id="@+id/songNameTextView"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:text="@string/song_title"
+            android:text="Song Title"
             android:textColor="@color/colorPrimary"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Song FT this artist"
-            android:id="@+id/categoryTextView"
-            android:layout_below="@+id/songNameTextView"
+            android:text="Song Title with ft"
+            android:id="@+id/songFTTextView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textStyle="italic"/>
@@ -59,8 +58,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Artist"
-                android:id="@+id/artistTextView"
+                android:text="Type"
+                android:id="@+id/typeTextView"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
                 android:textColor="@color/colorAccent"/>
