@@ -8,59 +8,68 @@ import org.parceler.Parcel;
 
 @Parcel
 public class Song {
-    private String mType;
-    private String mTitle;
-    private String mUrl;
-    private String mTitleWithFeatured;
-    private String mFulltitle;
-    private String mHeaderImageUrl;
-    private String mArtistName;
-    private String mArtistImage;
+    private String type;
+    private String title;
+    private String url;
+    private String titleWithFeatured;
+    private String fulltitle;
+    private String headerImageUrl;
+    private String artistName;
+    private String artistImage;
+    private String pushId;
 
 
     public Song(){}
     public Song(String type, String title, String titleWithFeatured,
                 String url, String fulltitle, String headerImageUrl, String artistName, String artistImage ){
-        mType= type;
-        mTitle = title;
-        mTitleWithFeatured = titleWithFeatured;
-        mUrl = url;
-        mFulltitle = fulltitle;
-        mHeaderImageUrl = headerImageUrl;
-        mArtistName = artistName;
-        mArtistImage = artistImage;
+        this.type= type;
+        this.title = title;
+        this.titleWithFeatured = titleWithFeatured;
+        this.url = url;
+        this.fulltitle = fulltitle;
+        this.headerImageUrl = headerImageUrl;
+        this.artistName = artistName;
+        this.artistImage = artistImage;
     }
 
     public String getType() {
-        return mType;
+        return type;
     }
 
     public String getTitle() {
-        return mTitle;
+        return title;
     }
 
     public String getUrl() {
-        return mUrl;
+        return url;
     }
 
     public String getTitleWithFeatured() {
-        return mTitleWithFeatured;
+        return titleWithFeatured;
     }
 
 
     public String getFulltitle() {
-        return mFulltitle;
+        return fulltitle;
     }
 
     public String getHeaderImageUrl() {
-        return mHeaderImageUrl;
+        return headerImageUrl;
     }
 
     public String getArtistName() {
-        return mArtistName;
+        return artistName;
     }
 
     public String getArtistImage() {
-        return mArtistImage;
+        return artistImage;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }
