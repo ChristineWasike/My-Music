@@ -4,15 +4,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.internal.SnackbarContentLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.wasike.mymusic.Constants;
 import com.example.wasike.mymusic.R;
 import com.example.wasike.mymusic.model.Song;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.skyfishjy.library.RippleBackground;
 import com.squareup.picasso.Picasso;
 
@@ -28,8 +36,8 @@ import butterknife.ButterKnife;
 
  */
  public class BlankFragment extends Fragment implements View.OnClickListener {
-    private static final int MAX_WIDTH = 400;
-    private static final int MAX_HEIGHT = 300;
+    private static final int MAX_WIDTH = 450;
+    private static final int MAX_HEIGHT = 350;
 
     //@Bind(R.id.content) RippleBackground mRippleBackground;
 
@@ -96,6 +104,31 @@ import butterknife.ButterKnife;
 
     @Override
     public void onClick(View view) {
+        if (view == mSaveSongButton) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+            DatabaseReference songReference = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_SONGS)
+                    //created a node within the songs node
+                    .child(uid);
+            songReference.push().setValue(mSong);
 
+            DatabaseReference pushRef = songReference.push();
+            String pushId = pushRef.getKey();
+            mSong.setPushId(pushId);
+            pushRef.setValue(mSong);
+            songReference.push().setValue(mSong);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+
+        } //else{
+//            Snackbar snackbar = Snackbar.make(coordinatorLayout, "Need an account to save", Snackbar.LENGTH_LONG)
+//                    .setAction("SIGN UP", new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            Snackbar snackbar1 = Snackbar.make(coordinatorLayout, "")
+//                        }
+//                    });
+//        }
     }
 }
