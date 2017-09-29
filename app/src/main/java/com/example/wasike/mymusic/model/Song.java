@@ -17,6 +17,7 @@ public class Song {
     private String artistName;
     private String artistImage;
     private String pushId;
+    String index;
 
 
     public Song(){}
@@ -30,6 +31,8 @@ public class Song {
         this.headerImageUrl = headerImageUrl;
         this.artistName = artistName;
         this.artistImage = artistImage;
+        this.index = "not_specified";
+
     }
 
     public String getType() {
@@ -71,5 +74,13 @@ public class Song {
 
     public void setPushId(String pushId) {
         this.pushId = pushId;
+    }
+
+    public String getIndex() {
+        return index;
+    }
+
+    public void setIndex(String index) {
+        this.index = index;
     }
 }
