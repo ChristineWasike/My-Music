@@ -112,23 +112,24 @@ import butterknife.ButterKnife;
                     .getReference(Constants.FIREBASE_CHILD_SONGS)
                     //created a node within the songs node
                     .child(uid);
-            songReference.push().setValue(mSong);
 
             DatabaseReference pushRef = songReference.push();
             String pushId = pushRef.getKey();
             mSong.setPushId(pushId);
             pushRef.setValue(mSong);
-            songReference.push().setValue(mSong);
+
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
 
-        } //else{
-//            Snackbar snackbar = Snackbar.make(coordinatorLayout, "Need an account to save", Snackbar.LENGTH_LONG)
-//                    .setAction("SIGN UP", new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            Snackbar snackbar1 = Snackbar.make(coordinatorLayout, "")
-//                        }
-//                    });
-//        }
+//        } else{
+//            Snackbar.make(view,"Need an account to save", Snackbar.LENGTH_LONG)
+//            .setAction("SIGN UP", new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                Intent intent = new Intent(getActivity(), LoginActivity.class);
+//                    startActivity(intent);
+//                }
+//            })
+//            .show();
+        }
     }
 }
