@@ -23,6 +23,8 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+import static com.example.wasike.mymusic.R.id.songImageView;
+
 /**
  * Created by wasike on 19/09/17.
  */
@@ -30,6 +32,8 @@ import java.util.ArrayList;
 public class FirebaseSongViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 private static final int MAX_WIDTH = 200;
 private static final int MAX_HEIGHT = 200;
+public ImageView mSongImageView;
+
 
     View mView;
     Context mContext;
@@ -42,7 +46,8 @@ private static final int MAX_HEIGHT = 200;
     }
 
     public void bindSong(Song song) {
-        ImageView songImageView = (ImageView) mView.findViewById(R.id.songImageView);
+        mSongImageView = (ImageView) mView.findViewById(R.id.songImageView);
+//        ImageView songImageView = (ImageView) mView.findViewById(songImageView);
         TextView nameTextView = (TextView) mView.findViewById(R.id.songNameTextView);
         TextView artistTextView = (TextView) mView.findViewById(R.id.typeTextView);
 
@@ -50,7 +55,7 @@ private static final int MAX_HEIGHT = 200;
                 .load(song.getHeaderImageUrl())
                 .resize(MAX_WIDTH, MAX_HEIGHT)
                 .centerCrop()
-                .into(songImageView);
+                .into(mSongImageView);
 
         nameTextView.setText(song.getTitle());
         artistTextView.setText("Artist: " + song.getArtistName());
