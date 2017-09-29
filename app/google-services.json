@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:104747992984:android:2dc937bfd4156e2d",
         "android_client_info": {
-          "package_name": "com.example.wasike.mymusic"
+          "package_name": "com.wasike.mymusic"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "104747992984-om6hd25dbs5h4dqk76oh0cvacleja8ag.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.wasike.mymusic",
+            "package_name": "com.wasike.mymusic",
             "certificate_hash": "91f67450d813f14cdb65845b2fc95cf51463aeda"
           }
         },

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "com.example.wasike.mymusic"
+        applicationId "com.wasike.mymusic"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
@@ -61,6 +61,7 @@ dependencies {
     testCompile 'org.robolectric:robolectric:3.0'
     annotationProcessor 'org.parceler:parceler:1.1.6'
 }
+
 
 
 

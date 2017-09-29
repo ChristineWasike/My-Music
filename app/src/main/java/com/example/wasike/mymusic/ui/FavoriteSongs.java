@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.wasike.mymusic.R;
+import com.example.wasike.mymusic.R;
 
 /**
  * A simple {@link Fragment} subclass.

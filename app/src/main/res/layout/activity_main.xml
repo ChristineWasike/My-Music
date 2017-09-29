@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:id="@+id/imageView"
-        android:src="@drawable/notes"
+        android:src="@drawable/live"
         android:scaleType="centerCrop"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -58,6 +58,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/search_songs_or_artists"
+        android:textColorHint="@color/colorTextIcons"
         android:textColor="@color/colorTextIcons"/>
 
 </RelativeLayout>

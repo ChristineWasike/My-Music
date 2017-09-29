@@ -39,14 +39,12 @@ import butterknife.ButterKnife;
     private static final int MAX_WIDTH = 450;
     private static final int MAX_HEIGHT = 350;
 
-    //@Bind(R.id.content) RippleBackground mRippleBackground;
 
 
 
 
     @Bind(R.id.songImageView) ImageView mImageLabel;
     @Bind(R.id.songNameTextView) TextView mNameLabel;
-//    @Bind(R.id.TitleFTTextView) TextView mTitleFTLabel;
     @Bind(R.id.artistTextView) TextView mArtistLabel;
 
     @Bind(R.id.centerImage) ImageView mWebsiteLabel;
@@ -67,10 +65,8 @@ import butterknife.ButterKnife;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-       // final RippleBackground rippleBackground = (RippleBackground) mRippleBackground;
         super.onCreate(savedInstanceState);
         mSong = Parcels.unwrap(getArguments().getParcelable("song"));
-       // rippleBackground.startRippleAnimation();
 
     }
 
@@ -91,7 +87,6 @@ import butterknife.ButterKnife;
         mWebsiteLabel.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                //rippleBackground.startRippleAnimation();
                 Intent intent = new Intent(view.getContext(), LyricsWebViewActivity.class);
                 intent.putExtra("url", mSong.getUrl());
                 startActivity(intent);
@@ -120,16 +115,6 @@ import butterknife.ButterKnife;
 
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
 
-//        } else{
-//            Snackbar.make(view,"Need an account to save", Snackbar.LENGTH_LONG)
-//            .setAction("SIGN UP", new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), LoginActivity.class);
-//                    startActivity(intent);
-//                }
-//            })
-//            .show();
         }
     }
 }

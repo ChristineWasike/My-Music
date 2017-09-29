@@ -13,4 +13,5 @@
 
     <string name="title_activity_login">LoginActivity</string>
     <string name="song_title">Song Title</string>
+    <string name="search_songs_or_artists">Search Songs or Artists</string>
 </resources>

@@ -50,9 +50,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (user != null) {
                     getSupportActionBar().setTitle("Welcome, "+ user.getDisplayName() + "!");
                 } else {
-                    getSupportActionBar().setTitle("Welcome, " + "stranger!");
+                    getSupportActionBar().setTitle("Welcome, " + "Stranger!");
 
                 }
+
             }
         };
     }
@@ -82,12 +83,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
+
+        if(mAuth.getCurrentUser()==null){
+            MenuItem item= menu.findItem(R.id.action_logout);
+            item.setVisible(false);
+
+        }else{
+            MenuItem item= menu.findItem(R.id.action_login);
+            item.setVisible(false);
+        }
         return super.onCreateOptionsMenu(menu);
+
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        if (id == R.id.action_login){
+            login();
+            return true;
+        }
         if (id == R.id.action_logout) {
             logout();
             return true;
@@ -110,6 +125,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void logout() {
+        FirebaseAuth.getInstance().signOut();
+
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    private void login() {
         FirebaseAuth.getInstance().signOut();
 
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.animation.RotateAnimation;
 
 import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
@@ -39,6 +40,5 @@ public class SongDetailActivity extends AppCompatActivity {
         mViewPager.setCurrentItem(startingPosition);
 
         getSupportActionBar().setTitle(mSongs.get(startingPosition).getTitle());
-
     }
 }
