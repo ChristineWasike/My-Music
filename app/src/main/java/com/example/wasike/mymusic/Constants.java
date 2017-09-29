@@ -13,4 +13,5 @@ public class Constants {
     public static final String PREFERENCE_SONG_KEY = "song";
     public static final String FIREBASE_CHILD_SEARCHED_SONG = "search";
     public static final String FIREBASE_CHILD_SONGS = "songs";
+    public static final String FIREBASE_QUERY_INDEX = "index";
 }
