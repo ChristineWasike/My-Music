@@ -18,11 +18,12 @@ public class Song {
     private String artistImage;
     private String pushId;
     String index;
+    private  String songPath;
 
 
     public Song(){}
     public Song(String type, String title, String titleWithFeatured,
-                String url, String fulltitle, String headerImageUrl, String artistName, String artistImage ){
+                String url, String fulltitle, String headerImageUrl, String artistName, String artistImage, String songPath ){
         this.type= type;
         this.title = title;
         this.titleWithFeatured = titleWithFeatured;
@@ -82,5 +83,9 @@ public class Song {
 
     public void setIndex(String index) {
         this.index = index;
+    }
+
+    public String getSongPath() {
+        return songPath;
     }
 }
