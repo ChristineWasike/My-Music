@@ -26,6 +26,7 @@ import okhttp3.Response;
  */
 
 public class SongService {
+    private static Song mSong;
     public static void findSong(String song, Callback callback) {
 
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.MUSIC_BASE_URL).newBuilder();
@@ -42,6 +43,25 @@ public class SongService {
             .url(url)
             .build();
         Log.v("Information display", url);
+
+        Call call = client.newCall(request);
+        call.enqueue(callback);
+    }
+
+    public static void findSpecSong(String specSong, Callback callback) {
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.SONG_BASE_URL).newBuilder();
+
+        urlBuilder.addQueryParameter(mSong.getSongPath(), specSong);
+
+        String url = urlBuilder.build().toString();
+
+        OkHttpClient client = new OkHttpClient();
+
+        Request request = new Request.Builder()
+                .header("Authorization", Constants.MUSIC_API_KEY)
+                .url(url)
+                .build();
+        Log.v("NewUrl", url);
 
         Call call = client.newCall(request);
         call.enqueue(callback);
@@ -68,10 +88,20 @@ public class SongService {
                     Log.v("url", url);
                     String fulltitle = hitJson.getJSONObject("result").getString("full_title");
                     String headerImageUrl = hitJson.getJSONObject("result").getString("header_image_url");
+
+                    //artist's name
+
                     String artistName = hitJson.getJSONObject("result").getJSONObject("primary_artist").getString("name");
+
+                    //artist's image
                     String artistImage = hitJson.getJSONObject("result").getJSONObject("primary_artist").getString("header_image_url");
 
-                    Song song = new Song(type,title, titleWithFeatured,url, fulltitle,headerImageUrl,artistName, artistImage);
+                    //trying to retrieve path to specific song
+                    String songPath = hitJson.getJSONObject("result").getString("api_path");
+
+                    Log.v("song path", songPath);
+
+                    Song song = new Song(type,title, titleWithFeatured,url, fulltitle,headerImageUrl,artistName, artistImage, songPath);
                     songs.add(song);
 
 
