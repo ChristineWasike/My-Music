@@ -7,8 +7,8 @@ android {
         applicationId "com.wasike.mymusic"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes.each {
@@ -61,6 +61,7 @@ dependencies {
     testCompile 'org.robolectric:robolectric:3.0'
     annotationProcessor 'org.parceler:parceler:1.1.6'
 }
+
 
 
 
