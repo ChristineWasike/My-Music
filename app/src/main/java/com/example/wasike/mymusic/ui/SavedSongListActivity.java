@@ -47,8 +47,8 @@ public class SavedSongListActivity extends AppCompatActivity implements OnStartD
         setUpFirebaseAdapter();
 
 
-//        mAuth = FirebaseAuth.getInstance();
-//
+        mAuth = FirebaseAuth.getInstance();
+
 //        if (mAuth.getCurrentUser() != null) {
 //        } else {
 //            mTextView.setText("You are not logged in. Click here to log in.");
