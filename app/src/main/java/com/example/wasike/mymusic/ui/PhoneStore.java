@@ -17,7 +17,6 @@ import com.example.wasike.mymusic.R;
 import com.example.wasike.mymusic.adapters.PhoneAdapter;
 import com.example.wasike.mymusic.model.Phone;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -68,6 +67,7 @@ public class PhoneStore extends AppCompatActivity {
 
     }
 
+    //method responsible for retrieving audio file information from device
     public void getSongList() {
         //retrieve song info
         //created a ContentResolver instance
