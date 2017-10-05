@@ -39,6 +39,6 @@ public class SongDetailActivity extends AppCompatActivity {
         mViewPager.setPageTransformer(true, new CubeOutTransformer());
         mViewPager.setCurrentItem(startingPosition);
 
-        getSupportActionBar().setTitle(mSongs.get(startingPosition).getTitle());
+        getSupportActionBar().hide();
     }
 }
