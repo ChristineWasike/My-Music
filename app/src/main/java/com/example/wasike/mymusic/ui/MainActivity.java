@@ -4,20 +4,15 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.wasike.mymusic.R;
-import com.example.wasike.mymusic.ui.MTActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -25,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public static String TAG = MainActivity.class.getSimpleName();
     @Bind(R.id.Songbutton) Button mSongButton;
     @Bind(R.id.savedSongbutton) Button mSavedSongButton;
+    @Bind(R.id.mySongbutton) Button mySongbutton;
 
 
     private FirebaseAuth mAuth;
@@ -40,12 +36,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mSavedSongButton.setOnClickListener(this);
 
+        mySongbutton.setOnClickListener(this);
+
         mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth){
-                //display welcome message
+                //display welcome message from the actionbar
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     getSupportActionBar().setTitle("Welcome, "+ user.getDisplayName() + "!");
@@ -58,14 +56,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
     }
 
+    //message that loads up when the search process is just about to start
     public void toasteMe(View view) {
         Toast myToast = Toast.makeText(this, "Searching!", Toast.LENGTH_SHORT);
         myToast.show();
 
     }
 
+    //three buttons present to carry out three specific functions of loading up a new activity
     @Override
     public void onClick(View view) {
+
+        //loads the activity with the search results
         if (view == mSongButton) {
             Intent intent = new Intent(this, MTActivity.class);
             Toast myToast = Toast.makeText(this, "Searching!", Toast.LENGTH_SHORT);
@@ -73,12 +75,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         }
 
+        //loads the activity containing saved songs
         if (view == mSavedSongButton) {
             Intent intent = new Intent(MainActivity.this, SavedSongListActivity.class);
             startActivity(intent);
         }
+
+        //loads up the activity containing songs from a user's device
+        if (view == mySongbutton) {
+            Intent intent = new Intent(this, PhoneStore.class);
+            startActivity(intent);
+        }
     }
 
+    //responsible for the overflow menu that holds the Login/Logout
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -94,8 +104,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         return super.onCreateOptionsMenu(menu);
 
+
     }
 
+    //this displays the options from the overflow menu
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -110,12 +122,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
+    //loads up when the activity is launched once a user has been successfully authenticated
     @Override
     public  void onStart(){
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
 
+    //Removes listener once a user is logged in
     @Override
     public void onStop(){
         super.onStop();
