@@ -10,12 +10,56 @@
       "client_info": {
         "mobilesdk_app_id": "1:104747992984:android:2dc937bfd4156e2d",
         "android_client_info": {
-          "package_name": "com.wasike.mymusic"
+          "package_name": "com.example.wasike.musicapp"
         }
       },
       "oauth_client": [
         {
           "client_id": "104747992984-om6hd25dbs5h4dqk76oh0cvacleja8ag.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wasike.musicapp",
+            "certificate_hash": "91f67450d813f14cdb65845b2fc95cf51463aeda"
+          }
+        },
+        {
+          "client_id": "104747992984-76op3jnfil3p1qisag0loq09hdvpa05m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlbww5S48Fz3j6Mia-WbRNhV3DrxvYYN0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104747992984-76op3jnfil3p1qisag0loq09hdvpa05m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104747992984:android:c27992dcc7d92863",
+        "android_client_info": {
+          "package_name": "com.wasike.mymusic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104747992984-86kkj3s0tdn23u3urvhlo0v624ho133l.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.wasike.mymusic",
