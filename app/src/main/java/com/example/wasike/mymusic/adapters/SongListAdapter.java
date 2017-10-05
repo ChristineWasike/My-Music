@@ -84,7 +84,7 @@ public class SongListAdapter extends RecyclerView.Adapter<SongListAdapter.SongVi
                     .centerCrop().into(msongImageView);
             msongNameTextView.setText(song.getTitle());
             msongFTTextView.setText(song.getTitleWithFeatured());
-            mtypeTextView.setText("Artist: " + song.getArtistName());
+            mtypeTextView.setText(song.getArtistName());
         }
     }
 }
