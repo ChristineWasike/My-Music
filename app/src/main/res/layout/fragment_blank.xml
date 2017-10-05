@@ -8,22 +8,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black_overlay"
+        android:background="@android:color/transparent"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/songImageView"
             android:layout_width="match_parent"
-            android:layout_height="297dp"
+            android:layout_height="300dp"
             android:scaleType="centerCrop"
             android:src="@drawable/lauv" />
 
         <ImageView
+            android:layout_marginTop="5dp"
             android:id="@+id/centerImage"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/web" />
+            android:layout_gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/web3"
+            />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -32,7 +34,8 @@
             android:paddingBottom="20dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:paddingTop="20dp">
+            android:paddingTop="20dp"
+            android:tooltipText="Search Lyrics">
 
             <TextView
                 android:id="@+id/songNameTextView"
@@ -61,6 +64,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,13 +97,14 @@
                     android:drawablePadding="4dp"
                     android:gravity="center"
                     android:text="Title and FT Artist"
-                    android:textColor="@color/colorTextIcons"
+                    android:textColor="@color/colorAccent"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
 
 
             </LinearLayout>
+            </ScrollView>
 
         </RelativeLayout>
 
