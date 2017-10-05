@@ -75,7 +75,7 @@ import butterknife.ButterKnife;
         View view = inflater.inflate(R.layout.fragment_blank, container, false);
         ButterKnife.bind(this, view);
 
-        Picasso.with(view.getContext()).load(mSong.getArtistImage()).resize(MAX_WIDTH, MAX_HEIGHT)
+        Picasso.with(view.getContext()).load(mSong.getHeaderImageUrl()).resize(MAX_WIDTH, MAX_HEIGHT)
                 .centerCrop().into(mImageLabel);
 
         mNameLabel.setText(mSong.getTitle());
