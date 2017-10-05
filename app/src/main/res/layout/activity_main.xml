@@ -49,6 +49,18 @@
         android:layout_marginRight="22dp"
         android:layout_marginEnd="22dp" />
 
+    <Button
+        android:id="@+id/mySongbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/savedSongbutton"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_toLeftOf="@+id/savedSongbutton"
+        android:layout_toStartOf="@+id/savedSongbutton"
+        android:text="My Songs " />
+
     <!--<EditText-->
         <!--android:id="@+id/editText"-->
         <!--android:layout_width="wrap_content"-->
