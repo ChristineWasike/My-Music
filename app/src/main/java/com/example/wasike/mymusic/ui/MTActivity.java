@@ -1,6 +1,5 @@
 package com.example.wasike.mymusic.ui;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -25,7 +24,6 @@ import com.example.wasike.mymusic.services.SongService;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.prefs.Preferences;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -33,15 +31,15 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
+//this activity  contains a list of songs and soon to be replaced by currently searched songs
+
 public class MTActivity extends AppCompatActivity {
-    public static final String TAG = MTActivity.class.getSimpleName();
 
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
     private String mRecentSong;
 
     @Bind(R.id.recyclerView) public RecyclerView mRecyclerView;
-//    @Bind(R.id.listView) ListView mListView;
     @Bind(R.id.titleTextView) TextView mTitleTextView;
     @Bind(R.id.progressBar) ProgressBar mProgressBar;
 
@@ -55,14 +53,12 @@ public class MTActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mt);
         ButterKnife.bind(this);
 
-//        Intent intent = getIntent();
-//        String title = intent.getStringExtra(mRecentSong);
-
-
-//        getTitles(title);
-
+        //responsible for loading list of songs obtained from previous search.
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentSong = mSharedPreferences.getString(Constants.PREFERENCE_SONG_KEY, null);
+
+        //(thinking of replacing it with someting more interesting and dynamic)
+        //It appears when retrieving songs from the genius API
         mTitleTextView.setText("The lyrics to your song: " + mRecentSong);
         Log.v(mRecentSong, "recent");
 
@@ -72,6 +68,7 @@ public class MTActivity extends AppCompatActivity {
         }
     }
 
+    //called upon to load up the search option on the actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
@@ -87,11 +84,13 @@ public class MTActivity extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
 
 
+
             @Override
             public boolean onQueryTextSubmit(String query) {
                 addToSharedPreferences(query);
                 getTitles(query);
                 Log.v(query, "query");
+                //might probably remove this line.
                 mTitleTextView.setText("The lyrics to your song: " + query);
                 return false;
             }
@@ -110,6 +109,8 @@ public class MTActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         return super.onOptionsItemSelected(item);
     }
+
+    //method declared in my song service responsible for retrieving information from the genius API
     private void getTitles(String title) {
         final SongService songService = new SongService();
 
@@ -119,6 +120,8 @@ public class MTActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+            //method runs on a new thread.
+            //if a response is received the following method will run on the UI thread once again
             @Override
             public void onResponse(Call call, Response response) {
                 mSongs = songService.processResults(response);
@@ -139,6 +142,7 @@ public class MTActivity extends AppCompatActivity {
         });
     }
 
+    //this method is the one mainly responsible for retrieving the previously searched song objects
     private void addToSharedPreferences(String song){
         mEditor.putString(Constants.PREFERENCE_SONG_KEY, song).apply();
 
