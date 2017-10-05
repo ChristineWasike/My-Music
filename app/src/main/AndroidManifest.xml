@@ -4,6 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    // permission to let music playback continue when the user's device becomes idle.
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/musicnote"
@@ -11,9 +16,7 @@
         android:roundIcon="@drawable/musicnote"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.MainActivity">
-
-        </activity>
+        <activity android:name=".ui.MainActivity"></activity>
         <activity android:name=".ui.MTActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -37,18 +40,23 @@
         <activity
             android:name=".ui.CreateAccountActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
         <activity
             android:name=".ui.LoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:theme="@style/FullscreenTheme"></activity>
-        <activity android:name=".ui.Splash">
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".ui.Splash"
+            android:label="Lycity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.PhoneStore"></activity>
+        <service android:name="com.example.wasike.mymusic.services.PhoneService" />
+
     </application>
 
 </manifest>
