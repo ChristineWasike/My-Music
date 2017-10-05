@@ -1,11 +1,7 @@
 package com.example.wasike.mymusic.ui;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.internal.SnackbarContentLayout;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,26 +17,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.skyfishjy.library.RippleBackground;
 import com.squareup.picasso.Picasso;
-
-import static android.R.attr.fragment;
-
 import org.parceler.Parcels;
-
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * A simple {@link Fragment} subclass.
 
- */
  public class BlankFragment extends Fragment implements View.OnClickListener {
     private static final int MAX_WIDTH = 450;
     private static final int MAX_HEIGHT = 350;
-
-
-
 
 
     @Bind(R.id.songImageView) ImageView mImageLabel;
@@ -63,6 +48,8 @@ import butterknife.ButterKnife;
       return songDetailFragment;
     }
 
+
+    //unwrapping song object sent to this file initially in byte code
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +57,7 @@ import butterknife.ButterKnife;
 
     }
 
+    //populating the song fragment with the data received on the song object
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_blank, container, false);
@@ -84,6 +72,7 @@ import butterknife.ButterKnife;
 
         mSaveSongButton.setOnClickListener(this);
 
+        //setting an explicit intent to view the lyrics from within my application using the webview
         mWebsiteLabel.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -97,6 +86,8 @@ import butterknife.ButterKnife;
         return view;
     }
 
+
+    //set to enable a user to save details on the particular song
     @Override
     public void onClick(View view) {
         if (view == mSaveSongButton) {
