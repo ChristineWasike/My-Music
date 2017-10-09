@@ -1,7 +1,13 @@
 # MyMusic Android Application 
 
+![alt text](https://i.imgur.com/SoZCdXo.png)
+![alt text](https://i.imgur.com/MR6vSG5.png)
+![alt text](https://i.imgur.com/fNZ8e4G.png)
+![alt text](https://i.imgur.com/RBIKXsi.png)
+![alt text](https://i.imgur.com/kv0grI1.png)
+
 ```
- Giving you access to lyrics to yoiur favourite songs, news on the latest releases and categorising music based on genre.
+ Giving you access to lyrics to your favourite songs, news on the latest releases and categorising music based on genre.
  ```
 
 #### This is a simple android application that's aimed at enabling the user to retrieved at least 30% of the lyrics to the desired song they search for

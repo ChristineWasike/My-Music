@@ -13,9 +13,14 @@ import android.widget.TextView;
 
 import com.example.wasike.mymusic.R;
 import com.example.wasike.mymusic.model.Phone;
+import com.example.wasike.mymusic.ui.MainActivity;
+import com.example.wasike.mymusic.ui.PhoneStore;
+import com.example.wasike.mymusic.ui.SoundDemo;
 
 import java.io.File;
 import java.util.ArrayList;
+
+import static android.os.Build.VERSION_CODES.M;
 
 /**
  * Created by wasike on 04/10/17.
@@ -28,6 +33,7 @@ public class PhoneAdapter extends BaseAdapter {
     private Context mContext;
 
     public PhoneAdapter(Context c, ArrayList<Phone> theSongs) {
+        mContext = c;
         phoneSongs = theSongs;
         songInf = LayoutInflater.from(c);
     }
@@ -62,6 +68,14 @@ public class PhoneAdapter extends BaseAdapter {
         artistView.setText(currSong.getphoneArtist());
         //set position as tag
         songLay.setTag(position);
+
+        songLay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, SoundDemo.class);
+                mContext.startActivity(intent);
+            }
+        });
 
 
 

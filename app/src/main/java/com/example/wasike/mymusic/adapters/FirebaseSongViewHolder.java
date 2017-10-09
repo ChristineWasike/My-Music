@@ -58,7 +58,7 @@ public ImageView mSongImageView;
                 .into(mSongImageView);
 
         nameTextView.setText(song.getTitle());
-        artistTextView.setText("Artist: " + song.getArtistName());
+        artistTextView.setText(song.getArtistName());
     }
 
     @Override

@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:screenOrientation="portrait"
     tools:context="com.example.wasike.mymusic.ui.MainActivity"
     >
 
@@ -32,16 +33,20 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="45dp"
-        android:layout_marginStart="45dp" />
+        android:layout_marginStart="45dp"
+        android:bottomRightRadius="10dp"
+        android:bottomLeftRadius="10dp"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"/>
 
     <Button
         android:id="@+id/savedSongbutton"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
         android:textColor="@color/colorTextIcons"
         android:visibility="visible"
         android:text="Saved Songs"
+        android:background="@drawable/mybutton"
         android:layout_alignBaseline="@+id/Songbutton"
         android:layout_alignBottom="@+id/Songbutton"
         android:layout_alignParentRight="true"
@@ -53,13 +58,11 @@
         android:id="@+id/mySongbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/savedSongbutton"
-        android:layout_marginBottom="36dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:text="My Songs "
+        android:layout_below="@+id/savedSongbutton"
         android:layout_toLeftOf="@+id/savedSongbutton"
         android:layout_toStartOf="@+id/savedSongbutton"
-        android:text="My Songs " />
+        android:layout_marginTop="75dp" />
 
     <!--<EditText-->
         <!--android:id="@+id/editText"-->

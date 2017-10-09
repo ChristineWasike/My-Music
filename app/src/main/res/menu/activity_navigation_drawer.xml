@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_music"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Music" />
+        <item
+            android:id="@+id/nav_lyrics"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Identify Lyrics" />
+        <item
+            android:id="@+id/nav_songInfo"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Song info" />
+        <item
+            android:id="@+id/nav_appInfo"
+            android:icon="@mipmap/ic_launcher"
+            android:title="App info" />
+    </group>
+
+
+
+</menu>
