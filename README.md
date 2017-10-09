@@ -1,10 +1,10 @@
 # MyMusic Android Application 
 
-![alt text](https://i.imgur.com/SoZCdXo.png)
-![alt text](https://i.imgur.com/MR6vSG5.png)
-![alt text](https://i.imgur.com/fNZ8e4G.png)
-![alt text](https://i.imgur.com/RBIKXsi.png)
-![alt text](https://i.imgur.com/kv0grI1.png)
+![alt text](https://i.imgur.com/SoZCdXom.png)
+![alt text](https://i.imgur.com/MR6vSG5m.png)
+![alt text](https://i.imgur.com/fNZ8e4Gm.png)
+![alt text](https://i.imgur.com/RBIKXsim.png)
+![alt text](https://i.imgur.com/kv0grI1m.png)
 
 ```
  Giving you access to lyrics to your favourite songs, news on the latest releases and categorising music based on genre.
